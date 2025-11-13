@@ -158,13 +158,13 @@ Este projeto está sob a licença MIT. Veja o arquivo [LICENSE](LICENSE) para ma
 
 ## 👨‍💻 Autor
 
-Desenvolvido com ❤️ por [Seu Nome]
+Desenvolvido com ❤️ por Bruno Souza
 
 ## 📧 Contato
 
 - Email: seu@email.com
-- LinkedIn: [Seu LinkedIn](https://linkedin.com/in/seu-perfil)
-- GitHub: [@seu-usuario](https://github.com/seu-usuario)
+- LinkedIn: [Bruno Souza](https://linkedin.com/in/seu-perfil)
+- GitHub: [@Brun05ouza](https://github.com/Brun05ouza)
 
 ---
 
