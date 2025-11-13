@@ -1,0 +1,88 @@
+generator client {
+  provider = "prisma-client-js"
+  binaryTargets = ["native", "windows"]
+  engineType = "library"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model User {
+  id        String   @id @default(uuid())
+  name      String
+  email     String   @unique
+  password  String
+  role      String   @default("user")
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}
+
+model Category {
+  id       String    @id @default(uuid())
+  name     String
+  products Product[]
+}
+
+model Supplier {
+  id       String    @id @default(uuid())
+  name     String
+  email    String?
+  phone    String?
+  address  String?
+  products Product[]
+}
+
+model Customer {
+  id      String  @id @default(uuid())
+  name    String
+  email   String?
+  phone   String?
+  address String?
+  sales   Sale[]
+}
+
+model Product {
+  id              String            @id @default(uuid())
+  name            String
+  price           Float
+  stock           Int               @default(0)
+  categoryId      String
+  supplierId      String?
+  category        Category          @relation(fields: [categoryId], references: [id])
+  supplier        Supplier?         @relation(fields: [supplierId], references: [id])
+  stockMovements  StockMovement[]
+  saleItems       SaleItem[]
+  createdAt       DateTime          @default(now())
+  updatedAt       DateTime          @updatedAt
+}
+
+model StockMovement {
+  id        String   @id @default(uuid())
+  productId String
+  type      String
+  quantity  Int
+  reason    String?
+  product   Product  @relation(fields: [productId], references: [id])
+  createdAt DateTime @default(now())
+}
+
+model Sale {
+  id         String     @id @default(uuid())
+  customerId String?
+  total      Float
+  customer   Customer?  @relation(fields: [customerId], references: [id])
+  items      SaleItem[]
+  createdAt  DateTime   @default(now())
+}
+
+model SaleItem {
+  id        String  @id @default(uuid())
+  saleId    String
+  productId String
+  quantity  Int
+  price     Float
+  sale      Sale    @relation(fields: [saleId], references: [id])
+  product   Product @relation(fields: [productId], references: [id])
+}
