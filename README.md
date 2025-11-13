@@ -43,7 +43,7 @@ Sistema completo de gestão empresarial com controle de estoque, vendas, cliente
 
 ### Pré-requisitos
 - Node.js >= 18.0.0
-- PostgreSQL >= 11
+- PostgreSQL >= 17
 - npm ou yarn
 
 ### 1. Clone o repositório
