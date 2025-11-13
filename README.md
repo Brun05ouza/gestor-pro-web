@@ -162,7 +162,7 @@ Desenvolvido com ❤️ por Bruno Souza
 
 ## 📧 Contato
 
-- Email: seu@email.com
+- Email: brunosouzagithub2003@gmail.com
 - LinkedIn: [Bruno Souza](https://linkedin.com/in/seu-perfil)
 - GitHub: [@Brun05ouza](https://github.com/Brun05ouza)
 
